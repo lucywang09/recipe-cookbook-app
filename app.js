@@ -11,8 +11,7 @@ async function searchRecipes() {
         const data = await response.json();
 
         const filtered = data.filter(recipe =>
-            recipe.name.toLowerCase().includes(query) ||
-            recipe.cuisine.toLowerCase().includes(query)
+            recipe.name.toLowerCase().includes(query)
         );
 
         container.innerHTML = "";
@@ -27,20 +26,15 @@ async function searchRecipes() {
             div.className = "recipe-card";
 
             div.innerHTML = `
-                <h2>${recipe.name}</h2>
-                <p><strong>Cuisine:</strong> ${recipe.cuisine}</p>
-                <p><strong>Ingredients:</strong> ${recipe.ingredients.join(", ")}</p>
-                <p><strong>Instructions:</strong> ${recipe.instructions}</p>
+                <h3>${recipe.name}</h3>
+                <p><strong>Cuisine:</strong> ${recipe.cuisine || "Unknown"}</p>
+                <p>${recipe.description || ""}</p>
+                ${recipe.image ? `<img src="${recipe.image}" alt="${recipe.name}" />` : ""}
             `;
-
             container.appendChild(div);
         });
 
     } catch (error) {
         container.innerHTML = "<p class='empty-state'>Error loading recipes</p>";
-        console.error(error);
     }
 }
-
-// Optional: Load all recipes on page load
-window.onload = searchRecipes;
