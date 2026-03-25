@@ -1,4 +1,4 @@
-const API_URL = "YOUR_FUNCTION_URL_HERE";
+const API_URL = "https://recipe-api-app-agg6eydcchhtfjcq.centralus-01.azurewebsites.net/api/GetRecipes";
 
 async function searchRecipes() {
     const query = document.getElementById("searchInput").value.toLowerCase();
