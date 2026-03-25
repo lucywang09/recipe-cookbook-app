@@ -1,4 +1,4 @@
-const API_URL = "https://recipe-api-app-agg6eydcchhtfjcq.centralus-01.azurewebsites.net/api/GetRecipes";
+const API_URL = "https://recipe-api-app-agg6eydcchhtfjcq.centralus-01.azurewebsites.net/api/GetRecipes"; // Replace with your Function URL
 
 async function searchRecipes() {
     const query = document.getElementById("searchInput").value.toLowerCase();
@@ -11,7 +11,8 @@ async function searchRecipes() {
         const data = await response.json();
 
         const filtered = data.filter(recipe =>
-            recipe.name.toLowerCase().includes(query)
+            recipe.name.toLowerCase().includes(query) ||
+            recipe.cuisine.toLowerCase().includes(query)
         );
 
         container.innerHTML = "";
@@ -24,11 +25,22 @@ async function searchRecipes() {
         filtered.forEach(recipe => {
             const div = document.createElement("div");
             div.className = "recipe-card";
-            div.textContent = recipe.name;
+
+            div.innerHTML = `
+                <h2>${recipe.name}</h2>
+                <p><strong>Cuisine:</strong> ${recipe.cuisine}</p>
+                <p><strong>Ingredients:</strong> ${recipe.ingredients.join(", ")}</p>
+                <p><strong>Instructions:</strong> ${recipe.instructions}</p>
+            `;
+
             container.appendChild(div);
         });
 
     } catch (error) {
         container.innerHTML = "<p class='empty-state'>Error loading recipes</p>";
+        console.error(error);
     }
 }
+
+// Optional: Load all recipes on page load
+window.onload = searchRecipes;
