@@ -1,26 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Recipe Cookbook</title>
+    <meta charset="UTF-8">
+    <title>World Cookbook</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <header>
+        <h1>World Cookbook</h1>
+    </header>
 
-    <div class="app">
+    <section class="search-section">
+        <input type="text" id="searchInput" placeholder="Search recipes...">
+        <button onclick="searchRecipes()">Search</button>
+    </section>
 
-        <header>
-            <h1>Recipe Cookbook</h1>
-            <p>Explore delicious recipes from around the world</p>
-        </header>
-
-        <div class="search-box">
-            <input type="text" id="searchInput" placeholder="Search recipes...">
-            <button onclick="searchRecipes()">Search</button>
-        </div>
-
-        <div id="recipes" class="recipes-grid"></div>
-
-    </div>
+    <section id="recipes" class="recipes-container">
+        <!-- Recipes will appear here -->
+    </section>
 
     <script src="app.js"></script>
 </body>
