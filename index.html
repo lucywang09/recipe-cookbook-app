@@ -1,26 +1,36 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recipe Cookbook</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- Inter (body) + Playfair Display (headings) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <div class="app">
-
-        <header>
-            <h1>Recipe Cookbook</h1>
-            <p>Explore delicious recipes from around the world</p>
-        </header>
-
-        <div class="search-box">
-            <input type="text" id="searchInput" placeholder="Search recipes...">
-            <button onclick="searchRecipes()">Search</button>
+    <!-- Dark full-width hero with search inside -->
+    <header>
+        <div class="header-content">
+            <p class="header-label">✦ Discover &amp; Cook</p>
+            <h1>Recipe <span>Cookbook</span></h1>
+            <p class="header-subtitle">Explore hundreds of delicious recipes from around the world</p>
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Search for a recipe, cuisine, or ingredient...">
+                <button onclick="searchRecipes()">Search</button>
+            </div>
         </div>
+    </header>
 
-        <div id="recipes" class="recipes-grid"></div>
-
-    </div>
+    <!-- Light content area -->
+    <main class="content">
+        <div class="content-inner">
+            <h2 class="section-title">All Recipes</h2>
+            <div id="recipes" class="recipes-grid"></div>
+        </div>
+    </main>
 
     <script src="app.js"></script>
 </body>
