@@ -36,7 +36,7 @@ const SAMPLE_RECIPES = [
         name: "Shakshuka",
         cuisine: "Middle Eastern",
         description: "Eggs poached in a rich, spiced tomato and pepper sauce. A vibrant one-pan dish that works brilliantly any time of day.",
-        image: "https://images.unsplash.com/photo-1624374053855-39a5a2b38d5b?w=600&q=80&auto=format&fit=crop"
+        image: "https://images.unsplash.com/photo-1590412200988-a436970781fa?w=600&q=80&auto=format&fit=crop"
     }
 ];
 
