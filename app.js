@@ -1,4 +1,4 @@
-const API_URL = "https://recipe-api-app-agg6eydcchhtfjcq.centralus-01.azurewebsites.net/api/GetRecipes";
+const API_URL = "https://photo-inspector-api-a0gqfdgecre5ahcg.centralindia-01.azurewebsites.net/api/AnalyzeImage";
 
 // ── Sample recipes shown immediately on page load ──────────────────────────
 const SAMPLE_RECIPES = [
