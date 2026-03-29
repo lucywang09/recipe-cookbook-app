@@ -1,4 +1,4 @@
-const API_URL = "https://ambitious-mud-01374fb10.6.azurestaticapps.net";
+const API_URL = "https://recipe-api-app-agg6eydcchhtfjcq.centralus-01.azurewebsites.net/api/GetRecipes";
 
 // ── Sample recipes shown immediately on page load ──────────────────────────
 const SAMPLE_RECIPES = [
